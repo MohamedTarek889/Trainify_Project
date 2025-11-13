@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  HiMenu,
+  HiX,
+  HiUser,
+  HiLightningBolt,
+  HiCake,
+  HiStar,
+} from "react-icons/hi";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 interface NavbarProps {
@@ -18,6 +25,12 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isScrolled, setIsScrolled] = useState(forceScrolled);
   const { logout, user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Get active tab from URL - only if we're on the user-dashboard page
+  const isUserDashboard = location.pathname === "/user-dashboard";
+  const searchParams = new URLSearchParams(location.search);
+  const activeTab = isUserDashboard ? searchParams.get("tab") || "info" : null;
 
   useEffect(() => {
     if (forceScrolled) {
@@ -71,54 +84,94 @@ const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            <a
-              href="#home"
-              className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
-                isScrolled
-                  ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
-                  : "text-white hover:text-[#FF6B35] hover:bg-white/10"
-              }`}
-              onClick={(e) => handleNavClick(e, "home")}
-            >
-              Home
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
-            </a>
-            <a
-              href="#about"
-              className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
-                isScrolled
-                  ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
-                  : "text-white hover:text-[#FF6B35] hover:bg-white/10"
-              }`}
-              onClick={(e) => handleNavClick(e, "about")}
-            >
-              About
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
-            </a>
-            <a
-              href="#services"
-              className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
-                isScrolled
-                  ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
-                  : "text-white hover:text-[#FF6B35] hover:bg-white/10"
-              }`}
-              onClick={(e) => handleNavClick(e, "services")}
-            >
-              Services
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
-            </a>
-            <a
-              href="#contact"
-              className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
-                isScrolled
-                  ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
-                  : "text-white hover:text-[#FF6B35] hover:bg-white/10"
-              }`}
-              onClick={(e) => handleNavClick(e, "contact")}
-            >
-              Contact
-              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
-            </a>
+            {isLoggedIn && (
+              <>
+                <Link
+                  to="/"
+                  className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
+                    location.pathname === "/"
+                      ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                      : isScrolled
+                      ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                      : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+                  }`}
+                >
+                  Home
+                  {location.pathname !== "/" && (
+                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+                  )}
+                </Link>
+
+                {user?.role !== "admin" && (
+                  <>
+                    <Link
+                      to="/user-dashboard?tab=info"
+                      className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group flex items-center gap-2 ${
+                        activeTab === "info"
+                          ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                          : isScrolled
+                          ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                          : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+                      }`}
+                    >
+                      <HiUser className="w-4 h-4" />
+                      Info
+                      {activeTab !== "info" && (
+                        <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+                      )}
+                    </Link>
+                    <Link
+                      to="/user-dashboard?tab=workouts"
+                      className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group flex items-center gap-2 ${
+                        activeTab === "workouts"
+                          ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                          : isScrolled
+                          ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                          : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+                      }`}
+                    >
+                      <HiLightningBolt className="w-4 h-4" />
+                      Workouts
+                      {activeTab !== "workouts" && (
+                        <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+                      )}
+                    </Link>
+                    <Link
+                      to="/user-dashboard?tab=meals"
+                      className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group flex items-center gap-2 ${
+                        activeTab === "meals"
+                          ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                          : isScrolled
+                          ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                          : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+                      }`}
+                    >
+                      <HiCake className="w-4 h-4" />
+                      Meals
+                      {activeTab !== "meals" && (
+                        <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+                      )}
+                    </Link>
+                    <Link
+                      to="/user-dashboard?tab=plan"
+                      className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group flex items-center gap-2 ${
+                        activeTab === "plan"
+                          ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                          : isScrolled
+                          ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                          : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+                      }`}
+                    >
+                      <HiStar className="w-4 h-4" />
+                      Plan
+                      {activeTab !== "plan" && (
+                        <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+                      )}
+                    </Link>
+                  </>
+                )}
+              </>
+            )}
           </div>
 
           {/* Auth Buttons */}
@@ -145,14 +198,14 @@ const Navbar: React.FC<NavbarProps> = ({
             ) : (
               <>
                 <Link
-                  to="/user-dashboard"
+                  to={user?.role === "admin" ? "/dashboard" : "/user-dashboard"}
                   className={`px-6 py-2 rounded-xl font-medium transition-all duration-300 hover:scale-105 ${
                     isScrolled
                       ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50 border border-transparent hover:border-[#FF6B35]/20"
                       : "text-white hover:text-[#FF6B35] hover:bg-white/10 border border-white/20 hover:border-[#FF6B35]/50"
                   }`}
                 >
-                  Dashboard
+                  {user?.role === "admin" ? "Admin Dashboard" : "My Dashboard"}
                 </Link>
 
                 <button
@@ -182,7 +235,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         isScrolled ? "text-gray-500" : "text-white/70"
                       }`}
                     >
-                      {user?.email || "user@trainify.com"}
+                      {user?.role === "admin" ? "Admin" : "Member"}
                     </p>
                   </div>
                 </div>
@@ -209,34 +262,75 @@ const Navbar: React.FC<NavbarProps> = ({
         >
           <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-xl">
             <div className="px-6 py-4 space-y-3">
-              <a
-                href="#home"
-                className="block text-gray-700 font-medium hover:text-[#FF6B35] hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-300"
-                onClick={(e) => handleNavClick(e, "home")}
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="block text-gray-700 font-medium hover:text-[#FF6B35] hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-300"
-                onClick={(e) => handleNavClick(e, "about")}
-              >
-                About
-              </a>
-              <a
-                href="#services"
-                className="block text-gray-700 font-medium hover:text-[#FF6B35] hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-300"
-                onClick={(e) => handleNavClick(e, "services")}
-              >
-                Services
-              </a>
-              <a
-                href="#contact"
-                className="block text-gray-700 font-medium hover:text-[#FF6B35] hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-300"
-                onClick={(e) => handleNavClick(e, "contact")}
-              >
-                Contact
-              </a>
+              {isLoggedIn && (
+                <>
+                  <Link
+                    to="/"
+                    className={`font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                      location.pathname === "/"
+                        ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg flex items-center"
+                        : "block text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+
+                  {user?.role !== "admin" && (
+                    <>
+                      <Link
+                        to="/user-dashboard?tab=info"
+                        className={`flex items-center gap-2 font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                          activeTab === "info"
+                            ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                            : "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <HiUser className="w-4 h-4" />
+                        Info
+                      </Link>
+                      <Link
+                        to="/user-dashboard?tab=workouts"
+                        className={`flex items-center gap-2 font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                          activeTab === "workouts"
+                            ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                            : "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <HiLightningBolt className="w-4 h-4" />
+                        Workouts
+                      </Link>
+                      <Link
+                        to="/user-dashboard?tab=meals"
+                        className={`flex items-center gap-2 font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                          activeTab === "meals"
+                            ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                            : "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <HiCake className="w-4 h-4" />
+                        Meals
+                      </Link>
+                      <Link
+                        to="/user-dashboard?tab=plan"
+                        className={`flex items-center gap-2 font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                          activeTab === "plan"
+                            ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                            : "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <HiStar className="w-4 h-4" />
+                        Plan
+                      </Link>
+                    </>
+                  )}
+                </>
+              )}
+
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 {!isLoggedIn ? (
                   <>
@@ -275,11 +369,17 @@ const Navbar: React.FC<NavbarProps> = ({
                     </div>
 
                     <Link
-                      to="/user-dashboard"
+                      to={
+                        user?.role === "admin"
+                          ? "/dashboard"
+                          : "/user-dashboard"
+                      }
                       className="block w-full text-left text-gray-700 font-medium hover:text-[#FF6B35] hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Dashboard
+                      {user?.role === "admin"
+                        ? "Admin Dashboard"
+                        : "My Dashboard"}
                     </Link>
                     <button
                       onClick={handleLogout}

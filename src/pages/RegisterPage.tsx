@@ -127,13 +127,13 @@ const RegisterPage: React.FC = () => {
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl p-8 md:p-12 border border-gray-100">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] rounded-2xl mb-4 shadow-lg">
             <span className="text-3xl font-bold text-white">T</span>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Create Account
           </h1>
-          <p className="text-gray-600">
+          <p className="text-sm md:text-base text-gray-600">
             Start your fitness transformation today
           </p>
         </div>
@@ -159,8 +159,8 @@ const RegisterPage: React.FC = () => {
                   value={formData.fullName}
                   onChange={(e) => handleChange("fullName", e.target.value)}
                   className={`
-                    block w-full pl-12 pr-4 py-3 border rounded-xl
-                    focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                    block w-full pl-12 pr-4 py-3 border rounded-xl text-sm md:text-base
+                    focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                     transition-all duration-200
                     ${
                       errors.fullName
@@ -196,8 +196,8 @@ const RegisterPage: React.FC = () => {
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   className={`
-                    block w-full pl-12 pr-4 py-3 border rounded-xl
-                    focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                    block w-full pl-12 pr-4 py-3 border rounded-xl text-sm md:text-base
+                    focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                     transition-all duration-200
                     ${
                       errors.email
@@ -235,8 +235,8 @@ const RegisterPage: React.FC = () => {
                   value={formData.phone}
                   onChange={(e) => handleChange("phone", e.target.value)}
                   className={`
-                    block w-full pl-12 pr-4 py-3 border rounded-xl
-                    focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                    block w-full pl-12 pr-4 py-3 border rounded-xl text-sm md:text-base
+                    focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                     transition-all duration-200
                     ${
                       errors.phone
@@ -270,7 +270,7 @@ const RegisterPage: React.FC = () => {
                   id="role"
                   value={formData.role}
                   onChange={(e) => handleChange("role", e.target.value)}
-                  className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl text-sm md:text-base focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent transition-all duration-200"
                 >
                   <option value="user">User (Trainee)</option>
                   <option value="admin">Admin (Trainer)</option>
@@ -298,8 +298,8 @@ const RegisterPage: React.FC = () => {
                   value={formData.password}
                   onChange={(e) => handleChange("password", e.target.value)}
                   className={`
-                    block w-full pl-12 pr-12 py-3 border rounded-xl
-                    focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                    block w-full pl-12 pr-12 py-3 border rounded-xl text-sm md:text-base
+                    focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                     transition-all duration-200
                     ${
                       errors.password
@@ -348,8 +348,8 @@ const RegisterPage: React.FC = () => {
                     handleChange("confirmPassword", e.target.value)
                   }
                   className={`
-                    block w-full pl-12 pr-12 py-3 border rounded-xl
-                    focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                    block w-full pl-12 pr-12 py-3 border rounded-xl text-sm md:text-base
+                    focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                     transition-all duration-200
                     ${
                       errors.confirmPassword
@@ -402,14 +402,14 @@ const RegisterPage: React.FC = () => {
                   I agree to the{" "}
                   <a
                     href="#"
-                    className="font-medium text-blue-600 hover:text-blue-500"
+                    className="font-medium text-[#FF6B35] hover:text-[#e55a2b]"
                   >
                     Terms and Conditions
                   </a>{" "}
                   and{" "}
                   <a
                     href="#"
-                    className="font-medium text-blue-600 hover:text-blue-500"
+                    className="font-medium text-[#FF6B35] hover:text-[#e55a2b]"
                   >
                     Privacy Policy
                   </a>
@@ -429,10 +429,10 @@ const RegisterPage: React.FC = () => {
             type="submit"
             disabled={isSubmitting}
             className="
-              w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
-              text-white font-bold rounded-xl
-              hover:from-blue-700 hover:to-purple-700
-              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+              w-full px-6 py-4 bg-gradient-to-r from-[#FF6B35] to-[#2BC48A]
+              text-white font-bold rounded-xl text-sm md:text-base
+              hover:from-[#e55a2b] hover:to-[#26ad7a]
+              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF6B35]
               disabled:opacity-50 disabled:cursor-not-allowed
               transform transition-all duration-200
               hover:scale-105 active:scale-95
@@ -456,7 +456,7 @@ const RegisterPage: React.FC = () => {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-medium text-blue-600 hover:text-blue-500"
+              className="font-medium text-[#FF6B35] hover:text-[#e55a2b]"
             >
               Sign in instead
             </Link>

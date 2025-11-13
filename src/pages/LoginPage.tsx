@@ -92,13 +92,13 @@ const LoginPage: React.FC = () => {
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 md:p-12 border border-gray-100">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] rounded-2xl mb-4 shadow-lg">
             <span className="text-3xl font-bold text-white">T</span>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Welcome Back!
           </h1>
-          <p className="text-gray-600">
+          <p className="text-sm md:text-base text-gray-600">
             Sign in to continue your fitness journey
           </p>
         </div>
@@ -123,8 +123,8 @@ const LoginPage: React.FC = () => {
                 value={formData.email}
                 onChange={(e) => handleChange("email", e.target.value)}
                 className={`
-                  block w-full pl-12 pr-4 py-3 border rounded-xl
-                  focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                  block w-full pl-12 pr-4 py-3 border rounded-xl text-sm md:text-base
+                  focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                   transition-all duration-200
                   ${
                     errors.email
@@ -160,8 +160,8 @@ const LoginPage: React.FC = () => {
                 value={formData.password}
                 onChange={(e) => handleChange("password", e.target.value)}
                 className={`
-                  block w-full pl-12 pr-12 py-3 border rounded-xl
-                  focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                  block w-full pl-12 pr-12 py-3 border rounded-xl text-sm md:text-base
+                  focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent
                   transition-all duration-200
                   ${
                     errors.password
@@ -207,7 +207,7 @@ const LoginPage: React.FC = () => {
             </div>
             <a
               href="#"
-              className="text-sm font-medium text-blue-600 hover:text-blue-500"
+              className="text-sm font-medium text-[#FF6B35] hover:text-[#e55a2b]"
             >
               Forgot password?
             </a>
@@ -218,10 +218,10 @@ const LoginPage: React.FC = () => {
             type="submit"
             disabled={isSubmitting}
             className="
-              w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
-              text-white font-bold rounded-xl
-              hover:from-blue-700 hover:to-purple-700
-              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+              w-full px-6 py-4 bg-gradient-to-r from-[#FF6B35] to-[#2BC48A]
+              text-white font-bold rounded-xl text-sm md:text-base
+              hover:from-[#e55a2b] hover:to-[#26ad7a]
+              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF6B35]
               disabled:opacity-50 disabled:cursor-not-allowed
               transform transition-all duration-200
               hover:scale-105 active:scale-95
@@ -240,11 +240,11 @@ const LoginPage: React.FC = () => {
         </form>
 
         {/* Demo Credentials */}
-        <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100">
-          <p className="text-sm text-blue-900 font-semibold mb-2 flex items-center gap-2">
+        <div className="mt-6 p-4 bg-orange-50 rounded-xl border border-orange-100">
+          <p className="text-sm text-orange-900 font-semibold mb-2 flex items-center gap-2">
             <HiCheckCircle className="w-5 h-5" /> Demo Accounts:
           </p>
-          <div className="space-y-1 text-xs text-blue-700">
+          <div className="space-y-1 text-xs text-orange-700">
             <p>
               <strong>Admin:</strong> admin@trainify.com
             </p>
@@ -263,7 +263,7 @@ const LoginPage: React.FC = () => {
             Don't have an account?{" "}
             <Link
               to="/register"
-              className="font-medium text-blue-600 hover:text-blue-500"
+              className="font-medium text-[#FF6B35] hover:text-[#e55a2b]"
             >
               Sign up now
             </Link>

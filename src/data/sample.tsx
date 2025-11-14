@@ -504,7 +504,7 @@ export const userWorkouts: UserWorkout[] = [
     fullDescription:
       "This full-body strength training program is designed to build muscle mass and increase overall strength. Perfect for intermediate lifters looking to maximize their gains in minimal time. Each exercise is carefully selected to target multiple muscle groups for maximum efficiency.",
     image:
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&h=400&fit=crop",
     duration: 60,
     difficulty: "intermediate",
     calories: 450,
@@ -526,7 +526,7 @@ export const userWorkouts: UserWorkout[] = [
     fullDescription:
       "Get your heart pumping with this intense HIIT cardio workout. Alternate between maximum effort and active recovery to maximize fat burning and improve cardiovascular fitness. This workout is perfect for those short on time but wanting maximum results.",
     image:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=400&fit=crop",
     duration: 30,
     difficulty: "advanced",
     calories: 400,
@@ -549,7 +549,7 @@ export const userWorkouts: UserWorkout[] = [
     fullDescription:
       "This relaxing yoga flow is perfect for beginners and those looking to improve flexibility. Focus on breathing and mindful movement through various poses that will help you feel centered and energized.",
     image:
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&h=400&fit=crop",
     duration: 45,
     difficulty: "beginner",
     calories: 180,
@@ -571,7 +571,7 @@ export const userWorkouts: UserWorkout[] = [
     fullDescription:
       "Build a rock-solid core with this comprehensive abs workout. Targeting all areas of your midsection including upper abs, lower abs, obliques, and lower back for complete core development.",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&h=400&fit=crop",
     duration: 25,
     difficulty: "intermediate",
     calories: 200,
@@ -593,7 +593,7 @@ export const userWorkouts: UserWorkout[] = [
     fullDescription:
       "This upper body workout is designed to build muscle mass and strength in your chest, back, shoulders, and arms. Perfect for those looking to develop an impressive upper body physique.",
     image:
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop",
     duration: 50,
     difficulty: "intermediate",
     calories: 380,
@@ -615,7 +615,7 @@ export const userWorkouts: UserWorkout[] = [
     fullDescription:
       "Never skip leg day! This comprehensive lower body workout will help you build strong, powerful legs and glutes. Includes a mix of compound and isolation exercises for complete leg development.",
     image:
-      "https://images.unsplash.com/photo-1434682772747-f16d3ea162c3?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1434754205268-ad3b5f549b11?w=600&h=400&fit=crop",
     duration: 55,
     difficulty: "advanced",
     calories: 500,

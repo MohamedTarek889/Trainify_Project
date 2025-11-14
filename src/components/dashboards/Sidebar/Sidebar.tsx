@@ -1,13 +1,7 @@
 import React from "react";
 import { HiX } from "react-icons/hi";
-import {
-  HiHome,
-  HiDocumentText,
-  HiAcademicCap,
-  HiUsers,
-  HiChevronLeft,
-  HiChevronRight,
-} from "react-icons/hi";
+import { HiHome, HiDocumentText, HiAcademicCap, HiUsers } from "react-icons/hi";
+import Logo from "../../shared/Logo";
 
 export interface SidebarItem {
   id: string;
@@ -20,8 +14,6 @@ export interface SidebarItem {
 
 interface SidebarProps {
   items: SidebarItem[];
-  collapsed?: boolean;
-  onToggle?: () => void;
 }
 
 const defaultIcons: { [key: string]: React.ReactNode } = {
@@ -31,48 +23,21 @@ const defaultIcons: { [key: string]: React.ReactNode } = {
   users: <HiUsers className="w-5 h-5" />,
 };
 
-const Sidebar: React.FC<SidebarProps> = ({
-  items,
-  collapsed = false,
-  onToggle,
-}) => {
+const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   return (
     <>
       {/* Desktop Sidebar */}
       <aside
-        className={`
+        className="
           hidden lg:flex lg:flex-col
-          ${collapsed ? "w-16" : "w-64"} 
-          bg-white border-r border-gray-200 
-          transition-all duration-300 ease-in-out
+          w-64
+          bg-white border-r border-gray-200
           relative
-        `}
+        "
       >
         {/* Header */}
         <div className="p-4 border-b border-gray-200">
-          <div className="flex items-center justify-between">
-            {!collapsed && (
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">T</span>
-                </div>
-                <span className="font-bold text-gray-900 text-lg">
-                  Trainify
-                </span>
-              </div>
-            )}
-            <button
-              onClick={onToggle}
-              className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-            >
-              {collapsed ? (
-                <HiChevronRight className="w-4 h-4 text-gray-600" />
-              ) : (
-                <HiChevronLeft className="w-4 h-4 text-gray-600" />
-              )}
-            </button>
-          </div>
+          <Logo className="text-2xl font-bold text-gray-900" />
         </div>
 
         {/* Navigation */}
@@ -94,7 +59,6 @@ const Sidebar: React.FC<SidebarProps> = ({
                       ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
                       : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                   }
-                  ${collapsed ? "justify-center" : ""}
                 `}
               >
                 <span
@@ -107,28 +71,20 @@ const Sidebar: React.FC<SidebarProps> = ({
                   {icon}
                 </span>
 
-                {!collapsed && (
-                  <>
-                    <span className="font-medium flex-1">{item.title}</span>
-                    {item.badge && (
-                      <span
-                        className={`
-                        text-xs px-2 py-1 rounded-full font-semibold
-                        ${
-                          item.active
-                            ? "bg-white/20 text-white"
-                            : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"
-                        }
-                      `}
-                      >
-                        {item.badge > 999 ? "999+" : item.badge}
-                      </span>
-                    )}
-                  </>
-                )}
-
-                {collapsed && item.badge && (
-                  <div className="absolute left-10 top-1 w-2 h-2 bg-[#FF6B35] rounded-full"></div>
+                <span className="font-medium flex-1">{item.title}</span>
+                {item.badge && (
+                  <span
+                    className={`
+                    text-xs px-2 py-1 rounded-full font-semibold
+                    ${
+                      item.active
+                        ? "bg-white/20 text-white"
+                        : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"
+                    }
+                  `}
+                  >
+                    {item.badge > 999 ? "999+" : item.badge}
+                  </span>
                 )}
               </a>
             );
@@ -137,14 +93,12 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer */}
         <div className="p-4 border-t border-gray-200">
-          {!collapsed && (
-            <div className="glass p-3 rounded-xl">
-              <p className="text-xs text-gray-600 font-medium">
-                Trainify Dashboard
-              </p>
-              <p className="text-xs text-gray-500">v1.0.0</p>
-            </div>
-          )}
+          <div className="glass p-3 rounded-xl">
+            <p className="text-xs text-gray-600 font-medium">
+              Trainify Dashboard
+            </p>
+            <p className="text-xs text-gray-500">v1.0.0</p>
+          </div>
         </div>
       </aside>
 
@@ -153,12 +107,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         {/* Mobile Header */}
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T</span>
-              </div>
-              <span className="font-bold text-gray-900 text-lg">Trainify</span>
-            </div>
+            <Logo className="text-xl font-bold text-gray-900" />
             <button
               className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Close sidebar"

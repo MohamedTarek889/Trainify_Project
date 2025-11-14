@@ -9,16 +9,15 @@ import {
 } from "react-icons/hi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import Logo from "../shared/Logo";
 
 interface NavbarProps {
   isLoggedIn?: boolean;
-  onScrollToSection: (sectionId: string) => void;
   forceScrolled?: boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
   isLoggedIn = false,
-  onScrollToSection,
   forceScrolled = false,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,15 +45,6 @@ const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [forceScrolled]);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    e.preventDefault();
-    onScrollToSection(sectionId);
-    setIsMenuOpen(false);
-  };
-
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -72,14 +62,12 @@ const Navbar: React.FC<NavbarProps> = ({
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-3xl font-bold animate-fade-in-left">
-            <span
-              className={`${
+          <div className="animate-fade-in-left">
+            <Logo
+              className={`text-3xl font-bold ${
                 isScrolled ? "text-gray-900" : "text-white"
               } transition-all duration-300`}
-            >
-              Train<span className="gradient-text animate-gradient">fy</span>
-            </span>
+            />
           </div>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../shared/Logo";
 import {
   FaFacebookF,
   FaInstagram,
@@ -50,11 +51,9 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <div className="text-3xl font-black mb-6">
-              <span className="text-white">
-                Train
-                <span className="gradient-text animate-gradient">fy</span>
-              </span>
+            <div className="mb-6">
+              {/* Use shared Logo component for consistency */}
+              <Logo className="text-3xl font-black text-white" />
             </div>
             <p className="text-gray-400 mb-8 max-w-md text-lg leading-relaxed">
               Empowering athletes worldwide with cutting-edge fitness tools,

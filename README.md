@@ -1,4 +1,4 @@
-# 🏋️ Trainify - Complete Fitness Management Platform
+# Trainify - Complete Fitness Management Platform
 
 <div align="center">
 
@@ -11,71 +11,71 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.12-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-[Features](#-key-features) • [Getting Started](#-getting-started) • [Project Structure](#-project-structure) • [Documentation](#-documentation)
+[Features](#key-features) • [Getting Started](#getting-started) • [Project Structure](#project-structure) • [Documentation](#documentation)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [User Roles & Access](#-user-roles--access)
-- [Pages & Components](#-pages--components)
-- [Authentication System](#-authentication-system)
-- [Styling & Design](#-styling--design)
-- [Available Scripts](#-available-scripts)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [User Roles & Access](#user-roles--access)
+- [Pages & Components](#pages--components)
+- [Authentication System](#authentication-system)
+- [Styling & Design](#styling--design)
+- [Available Scripts](#available-scripts)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🎯 Overview
+## Overview
 
 **Trainify** is a modern, full-featured fitness management platform designed to help users track their fitness journey, manage meal plans, access workout programs, and utilize advanced fitness calculators. The platform serves three main user types:
 
-- **👥 Regular Users**: Access personal dashboards, track workouts and meals, view subscription plans
-- **👨‍💼 Admins**: Full CRUD operations on meal plans, training programs, and user management
-- **🌐 Visitors**: Access landing page, fitness calculators, and authentication pages
+- **Regular Users**: Access personal dashboards, track workouts and meals, view subscription plans
+- **Admins**: Full CRUD operations on meal plans, training programs, and user management
+- **Visitors**: Access landing page, fitness calculators, and authentication pages
 
 The platform emphasizes user experience with smooth animations, responsive design, and intuitive navigation, making fitness tracking accessible and engaging for everyone.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🔓 Public Features (No Login Required)
+### Public Features (No Login Required)
 
 - **Landing Page** with hero section, about, services, and contact sections
 - **8 Advanced Fitness Calculators**:
-  - 📊 BMI Calculator (Body Mass Index)
-  - 🔥 BMR Calculator (Basal Metabolic Rate)
-  - 📈 TDEE Calculator (Total Daily Energy Expenditure)
-  - 🍽️ Macro Calculator (Protein, Carbs, Fats distribution)
-  - 📏 Body Fat Percentage Calculator
-  - ⚖️ Ideal Weight Calculator
-  - 💧 Water Intake Calculator
-  - 💪 One Rep Max Calculator
+  - BMI Calculator (Body Mass Index)
+  - BMR Calculator (Basal Metabolic Rate)
+  - TDEE Calculator (Total Daily Energy Expenditure)
+  - Macro Calculator (Protein, Carbs, Fats distribution)
+  - Body Fat Percentage Calculator
+  - Ideal Weight Calculator
+  - Water Intake Calculator
+  - One Rep Max Calculator
 - **Responsive Navigation** with mobile menu support
 - **Smooth Scrolling** and animated sections
 
-### 👤 User Features (Requires Login)
+### User Features (Requires Login)
 
 - **Personal Dashboard** with 4 main tabs:
-  - 📋 **Info Tab**: Personal trainee information display
-  - 🏋️ **Workouts Tab**: Assigned training programs with detailed exercise cards
-  - 🍽️ **Meals Tab**: Personalized meal plans with nutrition facts
-  - 💎 **Plan Tab**: Current subscription details (Gold/Platinum/Diamond)
+  - **Info Tab**: Personal trainee information display
+  - **Workouts Tab**: Assigned training programs with detailed exercise cards
+  - **Meals Tab**: Personalized meal plans with nutrition facts
+  - **Plan Tab**: Current subscription details (Gold/Platinum/Diamond)
 - **Meal Preview Modals** with complete nutrition information
 - **Workout Tracking** with exercise details and scheduling
 - **Tab-based Navigation** in navbar for quick access
 - **Profile Management**
 
-### 👨‍💼 Admin Features (Admin Dashboard)
+### Admin Features (Admin Dashboard)
 
 - **Overview Dashboard** with key metrics and statistics
 - **Meal Plans Management**:
@@ -95,7 +95,7 @@ The platform emphasizes user experience with smooth animations, responsive desig
 - **Sidebar Navigation** with collapsible menu
 - **Data Tables** with sorting, pagination, and bulk actions
 
-### 🎨 Design & UX Features
+### Design & UX Features
 
 - **Custom Gradient Themes** (#FF6B35 to #2BC48A)
 - **Glassmorphism Effects** on cards and modals
@@ -111,7 +111,7 @@ The platform emphasizes user experience with smooth animations, responsive desig
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Technologies
 
@@ -140,7 +140,7 @@ The platform emphasizes user experience with smooth animations, responsive desig
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -198,7 +198,7 @@ yarn preview
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Trainify_Project/
@@ -328,16 +328,16 @@ Trainify_Project/
 
 ---
 
-## 👥 User Roles & Access
+## User Roles & Access
 
-### 🌐 Public Access (No Authentication)
+### Public Access (No Authentication)
 
 - Landing page with all sections
 - Fitness calculators (8 tools)
 - Login and registration pages
 - Contact form
 
-### 👤 User Role (Authenticated)
+### User Role (Authenticated)
 
 **Access to:**
 
@@ -356,7 +356,7 @@ Trainify_Project/
 - Meal/workout management pages
 - User management
 
-### 👨‍💼 Admin Role (Authenticated)
+### Admin Role (Authenticated)
 
 **Access to:**
 
@@ -375,11 +375,11 @@ Trainify_Project/
 
 ---
 
-## 📄 Pages & Components
+## Pages & Components
 
 ### Public Pages
 
-#### 🏠 Landing Page (`/`)
+#### Landing Page (`/`)
 
 **Sections:**
 
@@ -390,7 +390,7 @@ Trainify_Project/
 - **Services Section**: Three main services (Calculator, Workouts, Recipes)
 - **Contact Section**: Contact form and information cards
 
-#### 🧮 Calculator Page (`/calculator`)
+#### Calculator Page (`/calculator`)
 
 **8 Advanced Calculators:**
 
@@ -403,7 +403,7 @@ Trainify_Project/
 7. **Water Intake Calculator** - Daily hydration needs
 8. **One Rep Max Calculator** - Strength calculation
 
-#### 🔐 Login Page (`/login`)
+#### Login Page (`/login`)
 
 - Email and password fields
 - Show/hide password toggle
@@ -411,7 +411,7 @@ Trainify_Project/
 - Role determination based on email (demo)
 - Protected: Redirects to home if already logged in
 
-#### 📝 Register Page (`/register`)
+#### Register Page (`/register`)
 
 - Full name, email, phone, password fields
 - Password confirmation
@@ -421,7 +421,7 @@ Trainify_Project/
 
 ### User Pages
 
-#### 👤 User Dashboard (`/user-dashboard`)
+#### User Dashboard (`/user-dashboard`)
 
 **Protected Route - Requires User Role**
 
@@ -441,7 +441,7 @@ Trainify_Project/
 
 ### Admin Pages
 
-#### 📊 Admin Dashboard (`/dashboard`)
+#### Admin Dashboard (`/dashboard`)
 
 **Protected Route - Requires Admin Role**
 
@@ -452,7 +452,7 @@ Trainify_Project/
 - Search functionality
 - Real-time data display
 
-#### 🍽️ Meal Plans Page (`/dashboard/meals`)
+#### Meal Plans Page (`/dashboard/meals`)
 
 **Protected Route - Requires Admin Role**
 
@@ -464,7 +464,7 @@ Trainify_Project/
 - Pagination
 - CRUD operations (Add/Edit/Delete/Preview)
 
-#### 🏋️ Training Programs Page (`/dashboard/training`)
+#### Training Programs Page (`/dashboard/training`)
 
 **Protected Route - Requires Admin Role**
 
@@ -474,7 +474,7 @@ Trainify_Project/
 - CRUD operations
 - Level-based filtering
 
-#### 👥 Users Page (`/dashboard/users`)
+#### Users Page (`/dashboard/users`)
 
 **Protected Route - Requires Admin Role**
 
@@ -487,7 +487,7 @@ Trainify_Project/
 
 ---
 
-## 🔐 Authentication System
+## Authentication System
 
 ### Implementation Details
 
@@ -529,7 +529,7 @@ interface User {
 
 ---
 
-## 🎨 Styling & Design
+## Styling & Design
 
 ### Design System
 
@@ -618,7 +618,7 @@ className="bg-gradient-to-r from-[#FF6B35] to-[#2BC48A]
 
 ---
 
-## 📜 Available Scripts
+## Available Scripts
 
 ### Development
 
@@ -658,7 +658,7 @@ npx tsc --noEmit
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to Trainify! Here's how you can help:
 
@@ -694,7 +694,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ---
 
-## 📚 Additional Documentation
+## Additional Documentation
 
 - **[AUTH_SYSTEM_README.md](AUTH_SYSTEM_README.md)** - Detailed authentication system documentation
 - **[DASHBOARD_STRUCTURE.md](DASHBOARD_STRUCTURE.md)** - Admin dashboard architecture
@@ -702,9 +702,9 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ---
 
-## 🎯 Roadmap
+## Roadmap
 
-### Phase 1 (Current) ✅
+### Phase 1 (Current)
 
 - [x] Landing page with all sections
 - [x] Authentication system
@@ -714,7 +714,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 - [x] Responsive design
 - [x] Custom animations
 
-### Phase 2 (Upcoming) 🚀
+### Phase 2 (Upcoming)
 
 - [ ] Backend API integration
 - [ ] Real-time notifications
@@ -723,7 +723,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 - [ ] Progress tracking charts
 - [ ] Social features (share achievements)
 
-### Phase 3 (Future) 🌟
+### Phase 3 (Future)
 
 - [ ] AI-powered meal recommendations
 - [ ] Virtual trainer chat
@@ -734,7 +734,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ---
 
-## 🐛 Known Issues
+## Known Issues
 
 - **Demo Mode**: Authentication is simulated (no backend)
 - **Sample Data**: All data is hardcoded for demonstration
@@ -742,13 +742,13 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👏 Acknowledgments
+## Acknowledgments
 
 - **React Team** for the amazing library
 - **Tailwind CSS** for the utility-first framework
@@ -760,10 +760,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Built with ❤️ by Mohamed Tarek**
+**GitHub Repository**
 
 [![GitHub](https://img.shields.io/badge/GitHub-MohamedTarek889-181717?style=flat&logo=github)](https://github.com/MohamedTarek889)
 
-**Trainify - Transform Your Body & Mind** 🏋️‍♂️
+**Trainify - Transform Your Body & Mind**
 
 </div>

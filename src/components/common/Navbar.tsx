@@ -6,6 +6,7 @@ import {
   HiLightningBolt,
   HiCake,
   HiStar,
+  HiCalculator,
 } from "react-icons/hi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -72,24 +73,41 @@ const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
+            {/* Calculator Link - Always Visible */}
+            <Link
+              to="/"
+              className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
+                location.pathname === "/"
+                  ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                  : isScrolled
+                  ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                  : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+              }`}
+            >
+              Home
+              {location.pathname !== "/" && (
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+              )}
+            </Link>
+            <Link
+              to="/calculator"
+              className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group flex items-center gap-2 ${
+                location.pathname === "/calculator"
+                  ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                  : isScrolled
+                  ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                  : "text-white hover:text-[#FF6B35] hover:bg-white/10"
+              }`}
+            >
+              <HiCalculator className="w-4 h-4" />
+              Calculator
+              {location.pathname !== "/calculator" && (
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
+              )}
+            </Link>
+
             {isLoggedIn && (
               <>
-                <Link
-                  to="/"
-                  className={`relative px-4 py-2 font-medium rounded-lg transition-all duration-300 group ${
-                    location.pathname === "/"
-                      ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
-                      : isScrolled
-                      ? "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
-                      : "text-white hover:text-[#FF6B35] hover:bg-white/10"
-                  }`}
-                >
-                  Home
-                  {location.pathname !== "/" && (
-                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6B35] group-hover:w-1/2 group-hover:left-1/4 transition-all duration-300"></span>
-                  )}
-                </Link>
-
                 {user?.role !== "admin" && (
                   <>
                     <Link
@@ -250,6 +268,20 @@ const Navbar: React.FC<NavbarProps> = ({
         >
           <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-xl">
             <div className="px-6 py-4 space-y-3">
+              {/* Calculator Link - Always Visible */}
+              <Link
+                to="/calculator"
+                className={`flex items-center gap-2 font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
+                  location.pathname === "/calculator"
+                    ? "bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] text-white shadow-lg"
+                    : "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <HiCalculator className="w-4 h-4" />
+                Calculator
+              </Link>
+
               {isLoggedIn && (
                 <>
                   <Link

@@ -14,6 +14,7 @@ import {
 import UserDashboard from "./pages/UserDashboard";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import CalculatorPage from "./pages/CalculatorPage";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NavbarWrapper from "./components/common/NavbarWrapper";
@@ -26,6 +27,9 @@ function App() {
         <Routes>
           {/* Landing Page Route */}
           <Route path="/" element={<LandingPage />} />
+
+          {/* Calculator Route - Public (Available for all users) */}
+          <Route path="/calculator" element={<CalculatorPage />} />
 
           {/* Authentication Routes */}
           <Route path="/login" element={<LoginPage />} />

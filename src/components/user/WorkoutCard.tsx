@@ -43,7 +43,7 @@ const WorkoutCard: React.FC<WorkoutCardProps> = ({ workout, onShowMore }) => {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           onError={(e) => {
             (e.target as HTMLImageElement).src =
-              "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop";
+              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='24' fill='%239ca3af'%3ENo Image%3C/text%3E%3C/svg%3E";
           }}
         />
 

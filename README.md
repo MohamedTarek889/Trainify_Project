@@ -734,14 +734,6 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ---
 
-## Known Issues
-
-- **Demo Mode**: Authentication is simulated (no backend)
-- **Sample Data**: All data is hardcoded for demonstration
-- **Image Loading**: Some images use placeholder URLs
-
----
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

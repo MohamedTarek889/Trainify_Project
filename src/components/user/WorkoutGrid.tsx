@@ -88,7 +88,7 @@ const WorkoutGrid: React.FC<WorkoutGridProps> = ({ workouts }) => {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=400&fit=crop";
+                      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='800' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='32' fill='%239ca3af'%3ENo Image Available%3C/text%3E%3C/svg%3E";
                   }}
                 />
 

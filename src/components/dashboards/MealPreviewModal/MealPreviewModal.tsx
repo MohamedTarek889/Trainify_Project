@@ -121,7 +121,7 @@ const MealPreviewModal: React.FC<MealPreviewModalProps> = ({
                       className="w-full h-64 object-cover rounded-2xl shadow-lg"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src =
-                          "https://images.unsplash.com/photo-1546554137-f86b9593a222?w=400&h=300&fit=crop";
+                          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='24' fill='%239ca3af'%3ENo Image%3C/text%3E%3C/svg%3E";
                       }}
                     />
                   </div>

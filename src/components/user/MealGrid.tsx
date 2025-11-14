@@ -11,6 +11,7 @@ import {
   HiFire,
   HiUserGroup,
   HiCheckCircle,
+  HiPlus,
 } from "react-icons/hi";
 
 interface MealGridProps {
@@ -243,10 +244,11 @@ const MealGrid: React.FC<MealGridProps> = ({ meals }) => {
                       transition-all duration-300 hover:shadow-lg
                       transform hover:scale-105 active:scale-95
                       bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 
-                      hover:shadow-green-500/25
+                      hover:shadow-green-500/25 flex items-center justify-center gap-2
                     "
                   >
-                    🍳 Add to My Meals
+                    <HiPlus className="w-5 h-5" />
+                    Add to My Meals
                   </button>
                 </div>
               </div>

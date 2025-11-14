@@ -4,7 +4,15 @@
  */
 
 import React from "react";
-import { HiClock, HiFire, HiUserGroup } from "react-icons/hi";
+import {
+  HiClock,
+  HiFire,
+  HiUserGroup,
+  HiSun,
+  HiCake,
+  HiMoon,
+  HiCookie,
+} from "react-icons/hi";
 
 export interface UserMeal {
   id: string;
@@ -41,14 +49,14 @@ const MealCard: React.FC<MealCardProps> = ({ meal, onShowMore }) => {
     return colors[category as keyof typeof colors];
   };
 
-  const getCategoryEmoji = (category: string) => {
-    const emojis = {
-      breakfast: "🌅",
-      lunch: "🍱",
-      dinner: "🌙",
-      snack: "🍪",
+  const getCategoryIcon = (category: string) => {
+    const icons = {
+      breakfast: <HiSun className="w-4 h-4" />,
+      lunch: <HiCake className="w-4 h-4" />,
+      dinner: <HiMoon className="w-4 h-4" />,
+      snack: <HiCookie className="w-4 h-4" />,
     };
-    return emojis[category as keyof typeof emojis];
+    return icons[category as keyof typeof icons];
   };
 
   return (
@@ -75,7 +83,7 @@ const MealCard: React.FC<MealCardProps> = ({ meal, onShowMore }) => {
               meal.category
             )} backdrop-blur-sm flex items-center gap-1`}
           >
-            <span>{getCategoryEmoji(meal.category)}</span>
+            {getCategoryIcon(meal.category)}
             {meal.category.toUpperCase()}
           </span>
         </div>

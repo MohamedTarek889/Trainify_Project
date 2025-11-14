@@ -54,9 +54,9 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "navbar-blur shadow-2xl border-b border-white/20"
+          ? "bg-white shadow-lg border-b border-gray-200"
           : "bg-transparent"
       }`}
     >
@@ -222,7 +222,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 </button>
 
                 {/* User Info */}
-                <div className="flex items-center gap-2 ml-2 px-3 py-2 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <div className="flex items-center gap-2 ml-2 px-3 py-2 rounded-xl bg-gray-100 border border-gray-200">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] flex items-center justify-center">
                     <span className="text-white font-semibold text-sm">
                       {user?.name.charAt(0).toUpperCase() || "U"}
@@ -266,7 +266,7 @@ const Navbar: React.FC<NavbarProps> = ({
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-xl">
+          <div className="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-xl">
             <div className="px-6 py-4 space-y-3">
               {/* Calculator Link - Always Visible */}
               <Link

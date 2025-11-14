@@ -4,11 +4,7 @@ import FloatingParticles from "./hero/FloatingParticles";
 import HeroContent from "./hero/HeroContent";
 import ScrollIndicator from "./hero/ScrollIndicator";
 
-interface HeroSectionProps {
-  onScrollToSection: (sectionId: string) => void;
-}
-
-const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection }) => {
+const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
@@ -26,7 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection }) => {
       <FloatingParticles />
 
       {/* Hero Content */}
-      <HeroContent onScrollToSection={onScrollToSection} />
+      <HeroContent />
 
       {/* Premium Scroll Indicator */}
       <ScrollIndicator />

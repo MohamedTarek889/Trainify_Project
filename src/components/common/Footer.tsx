@@ -8,36 +8,20 @@ import {
   FaWhatsapp,
   FaLinkedin,
   FaEnvelope,
+  FaBriefcase,
 } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const developers = [
     {
-      name: "John Doe",
+      name: "Youseif Elshreif",
       role: "Frontend Developer",
-      github: "https://github.com/johndoe",
-      facebook: "https://facebook.com/johndoe",
-      whatsapp: "https://wa.me/1234567890",
-      linkedin: "https://linkedin.com/in/johndoe",
-      email: "johndoe@example.com",
-    },
-    {
-      name: "Jane Smith",
-      role: "Backend Developer",
-      github: "https://github.com/janesmith",
-      facebook: "https://facebook.com/janesmith",
-      whatsapp: "https://wa.me/0987654321",
-      linkedin: "https://linkedin.com/in/janesmith",
-      email: "janesmith@example.com",
-    },
-    {
-      name: "Alice Johnson",
-      role: "UI/UX Designer",
-      github: "https://github.com/alicejohnson",
-      facebook: "https://facebook.com/alicejohnson",
-      whatsapp: "https://wa.me/1122334455",
-      linkedin: "https://linkedin.com/in/alicejohnson",
-      email: "alicejohnson@example.com",
+      github: "http://github.com/youseif-elshreif/",
+      facebook: "https://www.facebook.com/youseifelshreif",
+      whatsapp: "https://wa.me/1277906691",
+      linkedin: "https://www.linkedin.com/in/youseif-elshreif",
+      portfolio: "https://youseifelshreif.me",
+      email: "youseifelshreif3@gmail.com",
     },
   ];
 
@@ -195,6 +179,18 @@ const Footer: React.FC = () => {
                     title="GitHub"
                   >
                     <FaGithub className="w-4 h-4 group-hover/icon:scale-110 transition-transform" />
+                  </a>
+                  <a
+                    href={dev.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div
+                      className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center hover:bg-purple-700 hover:scale-110 transition-all duration-300 group/icon"
+                      title="Portfolio"
+                    >
+                      <FaBriefcase className="w-4 h-4 group-hover/icon:scale-110 transition-transform" />
+                    </div>
                   </a>
                   <a
                     href={dev.facebook}

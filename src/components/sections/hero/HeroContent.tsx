@@ -1,13 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { HiCalculator, HiArrowRight } from "react-icons/hi";
 import GradientText from "../../shared/GradientText";
 import Button from "../../shared/Button";
 
-interface HeroContentProps {
-  onScrollToSection: (sectionId: string) => void;
-}
-
-const HeroContent: React.FC<HeroContentProps> = ({ onScrollToSection }) => {
+const HeroContent: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
       <div className="animate-fade-in-up">
@@ -32,7 +30,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onScrollToSection }) => {
           <Button
             variant="primary"
             size="lg"
-            onClick={() => onScrollToSection("services")}
+            onClick={() => navigate("/calculator")}
             icon={
               <HiCalculator className="w-6 h-6 group-hover:rotate-12 transition-transform" />
             }
@@ -43,7 +41,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onScrollToSection }) => {
           <Button
             variant="secondary"
             size="lg"
-            onClick={() => onScrollToSection("contact")}
+            onClick={() => navigate("/register")}
             icon={
               <HiArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             }

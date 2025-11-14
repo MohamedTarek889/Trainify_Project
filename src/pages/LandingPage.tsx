@@ -6,16 +6,9 @@ import ServicesSection from "../components/sections/ServicesSection";
 import ContactSection from "../components/sections/ContactSection";
 
 const LandingPage: React.FC = () => {
-  const scrollToSection = (elementId: string) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      <HeroSection onScrollToSection={scrollToSection} />
+      <HeroSection />
       <AboutSection />
       <ServicesSection />
       <ContactSection />

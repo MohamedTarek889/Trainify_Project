@@ -1,19 +1,8 @@
-import { HiShoppingCart, HiCalculator } from "react-icons/hi";
+import { HiCalculator } from "react-icons/hi";
 import { FaDumbbell, FaUtensils } from "react-icons/fa";
 import type { Service } from "./types";
 
 export const servicesData: Service[] = [
-  {
-    icon: HiShoppingCart,
-    title: "Supplements Store",
-    description:
-      "Premium supplements and nutrition products. Browse freely, login required for purchases.",
-    color: "from-[#FF6B35] to-[#e55a2b]",
-    hoverColor: "text-[#FF6B35]",
-    bgGradient: "from-[#FF6B35]/20 via-transparent to-[#2BC48A]/20",
-    delay: "0.1s",
-    actionText: "Explore Store",
-  },
   {
     icon: HiCalculator,
     title: "Smart Calculator",

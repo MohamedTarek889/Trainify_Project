@@ -20,7 +20,7 @@ const ServicesSection: React.FC = () => {
           subtitle="Comprehensive tools and resources designed to elevate your fitness journey to professional levels"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}

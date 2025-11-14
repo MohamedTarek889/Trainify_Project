@@ -1,5 +1,4 @@
 import React from "react";
-import { HiArrowRight } from "react-icons/hi";
 import type { Service } from "./types";
 import IconBox from "../../shared/IconBox";
 
@@ -35,12 +34,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           <p className="text-gray-300 mb-6 leading-relaxed">
             {service.description}
           </p>
-          <div
-            className={`flex items-center ${service.hoverColor} font-semibold group-hover:translate-x-2 transition-transform`}
-          >
-            <span>{service.actionText}</span>
-            <HiArrowRight className="w-4 h-4 ml-2" />
-          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,3 @@
-/**
- * Plan Details Component
- * Displays subscription plan information and upgrade options
- */
-
 import React from "react";
 import {
   HiStar,

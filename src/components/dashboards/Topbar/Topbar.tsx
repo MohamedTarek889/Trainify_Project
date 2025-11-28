@@ -3,7 +3,7 @@ import { HiSearch, HiPlus, HiMenu, HiLogout } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../shared";
 import { useLayout } from "../Layout/useLayout";
-import { useAuth } from "../../../context/AuthContext";
+import { useAuth } from "../../../context/useAuth";
 
 interface SearchConfig {
   placeholder?: string;

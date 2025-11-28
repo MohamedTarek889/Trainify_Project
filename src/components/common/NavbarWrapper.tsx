@@ -1,13 +1,7 @@
-/**
- * NavbarWrapper Component
- * Conditionally renders Navbar based on current route
- * Shows Navbar everywhere except admin dashboard pages
- */
-
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/useAuth";
 
 const NavbarWrapper: React.FC = () => {
   const location = useLocation();
@@ -24,21 +18,7 @@ const NavbarWrapper: React.FC = () => {
   // Check if we're on the home page
   const isHomePage = location.pathname === "/";
 
-  // For landing page, we need smooth scroll functionality
-  const scrollToSection = (elementId: string) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <Navbar
-      isLoggedIn={isAuthenticated}
-      onScrollToSection={scrollToSection}
-      forceScrolled={!isHomePage}
-    />
-  );
+  return <Navbar isLoggedIn={isAuthenticated} forceScrolled={!isHomePage} />;
 };
 
 export default NavbarWrapper;

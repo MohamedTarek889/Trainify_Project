@@ -1,8 +1,3 @@
-/**
- * Meal Card Component
- * Displays individual meal information in a card layout
- */
-
 import React from "react";
 import {
   HiClock,

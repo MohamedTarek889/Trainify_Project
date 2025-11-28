@@ -1,8 +1,3 @@
-/**
- * User Info Tab Component
- * Displays trainee's personal information in a clean card layout
- */
-
 import React from "react";
 import {
   HiUser,

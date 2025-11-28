@@ -1,8 +1,3 @@
-/**
- * Workout Card Component
- * Displays individual workout information in a card layout
- */
-
 import React from "react";
 import { HiClock, HiLightningBolt, HiFire } from "react-icons/hi";
 

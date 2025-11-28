@@ -1,18 +1,3 @@
-/**
- * Dashboard Page for Trainify Admin Panel
- *
- * This is the main dashboard overview page showing key metrics and overview cards.
- * Individual sections (meals, training, users) have their own dedicated pages.
- *
- * Project Structure:
- * - This is a Vite + React project (not Next.js)
- * - Components follow the existing project patterns with glass styling and custom CSS classes
- * - Route handling can be implemented with React Router if needed
- *
- * Usage:
- * Import this component and add it to your routing system (e.g., React Router)
- */
-
 import React from "react";
 import Layout from "../components/dashboards/Layout";
 import Topbar from "../components/dashboards/Topbar";

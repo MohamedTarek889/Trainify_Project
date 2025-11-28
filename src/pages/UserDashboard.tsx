@@ -1,13 +1,3 @@
-/**
- * User Dashboard Page for Trainify
- *
- * Main dashboard for regular users showing:
- * - Personal trainee information
- * - Assigned workouts
- * - Meal plans
- * - Subscription details
- */
-
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import UserInfoTab from "../components/user/UserInfoTab";

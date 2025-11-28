@@ -1,8 +1,3 @@
-/**
- * Register Page Component
- * Handles new user registration with form validation
- */
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {
@@ -15,7 +10,7 @@ import {
   HiUserGroup,
   HiExclamationCircle,
 } from "react-icons/hi";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 
 const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
@@ -122,14 +117,7 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center p-4 py-12">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-      </div>
-
+    <div className="min-h-screen pt-24 pb-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center p-4 py-12">
       {/* Register Card */}
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl p-8 md:p-12 border border-gray-100">
         {/* Logo/Header */}

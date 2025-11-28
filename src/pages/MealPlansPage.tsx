@@ -1,13 +1,3 @@
-/**
- * Meal Plans Management Page for Trainify Admin Panel
- *
- * This page handles the management of meal plans including:
- * - Viewing meal plans list
- * - Adding new meal plans
- * - Editing existing meal plans
- * - Deleting meal plans
- */
-
 import React, { useState } from "react";
 import Layout from "../components/dashboards/Layout";
 import Topbar from "../components/dashboards/Topbar";

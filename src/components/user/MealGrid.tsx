@@ -1,8 +1,3 @@
-/**
- * Meal Grid Component with Modal
- * Displays meals in a responsive 3-column grid
- */
-
 import React, { useState } from "react";
 import MealCard, { type UserMeal } from "./MealCard";
 import {

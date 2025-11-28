@@ -1,19 +1,10 @@
-/**
- * Users Management Page for Trainify Admin Panel
- *
- * This page handles the management of users including:
- * - Viewing users list
- * - Adding new users
- * - Editing existing users
- * - Deleting users
- */
-
 import React, { useState } from "react";
 import Layout from "../components/dashboards/Layout";
 import Topbar from "../components/dashboards/Topbar";
 import DataTable from "../components/dashboards/DataTable";
 import AddEditModal from "../components/dashboards/AddEditModal";
 import ConfirmDialog from "../components/dashboards/ConfirmDialog";
+import UserPreviewModal from "../components/dashboards/UserPreviewModal";
 import { users, formatDate, getStatusBadge, type User } from "../data/sample";
 import type {
   Column,
@@ -25,6 +16,47 @@ const UsersPage: React.FC = () => {
   const [addEditModalOpen, setAddEditModalOpen] = useState(false);
   const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<User | null>(null);
+  const [previewModalOpen, setPreviewModalOpen] = useState(false);
+  const [previewingUser, setPreviewingUser] = useState<User | null>(null);
+
+  // Define fields for user form
+  const userFields = [
+    {
+      name: "name",
+      label: "Full Name",
+      type: "text" as const,
+      required: true,
+      placeholder: "Enter user's full name",
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      type: "email" as const,
+      required: true,
+      placeholder: "user@example.com",
+    },
+    {
+      name: "role",
+      label: "Role",
+      type: "select" as const,
+      required: true,
+      options: [
+        { value: "admin", label: "Admin" },
+        { value: "trainer", label: "Trainer" },
+        { value: "member", label: "Member" },
+      ],
+    },
+    {
+      name: "status",
+      label: "Status",
+      type: "select" as const,
+      required: true,
+      options: [
+        { value: "active", label: "Active" },
+        { value: "inactive", label: "Inactive" },
+      ],
+    },
+  ];
 
   // Event handlers
   const handleSearch = (query: string) => {
@@ -48,8 +80,8 @@ const UsersPage: React.FC = () => {
   };
 
   const handlePreview = (item: User) => {
-    console.log("Previewing user:", item);
-    // Implement preview logic
+    setPreviewingUser(item);
+    setPreviewModalOpen(true);
   };
 
   const handleSubmit = (values: Record<string, unknown>) => {
@@ -156,6 +188,7 @@ const UsersPage: React.FC = () => {
           onSubmit={handleSubmit}
           initialValues={selectedItem ? { ...selectedItem } : {}}
           title={selectedItem ? "Edit User" : "Add New User"}
+          fields={userFields}
         />
 
         {/* Confirm Delete Dialog */}
@@ -167,6 +200,16 @@ const UsersPage: React.FC = () => {
           onCancel={() => setConfirmDialogOpen(false)}
           confirmText="Delete"
           variant="danger"
+        />
+
+        {/* User Preview Modal */}
+        <UserPreviewModal
+          open={previewModalOpen}
+          user={previewingUser}
+          onClose={() => {
+            setPreviewModalOpen(false);
+            setPreviewingUser(null);
+          }}
         />
       </div>
     </Layout>

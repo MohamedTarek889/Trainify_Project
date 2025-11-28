@@ -1,8 +1,3 @@
-/**
- * Workout Grid Component with Modal
- * Displays workouts in a responsive 3-column grid
- */
-
 import React, { useState } from "react";
 import WorkoutCard, { type Workout } from "./WorkoutCard";
 import { HiX, HiClock, HiFire, HiCheckCircle, HiPlay } from "react-icons/hi";

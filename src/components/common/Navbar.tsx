@@ -9,7 +9,7 @@ import {
   HiCalculator,
 } from "react-icons/hi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/useAuth";
 import Logo from "../shared/Logo";
 
 interface NavbarProps {
@@ -222,8 +222,14 @@ const Navbar: React.FC<NavbarProps> = ({
                 </button>
 
                 {/* User Info */}
-                <div className="flex items-center gap-2 ml-2 px-3 py-2 rounded-xl bg-gray-100 border border-gray-200">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] flex items-center justify-center">
+                <div
+                  className={`flex items-center gap-2 ml-2 px-3 py-2 rounded-xl transition-all duration-300 ${
+                    isScrolled
+                      ? "bg-gradient-to-r from-orange-50 to-purple-50 border border-orange-200"
+                      : "bg-white/10 backdrop-blur-sm border border-white/20"
+                  }`}
+                >
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#FF6B35] to-[#2BC48A] flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-semibold text-sm">
                       {user?.name.charAt(0).toUpperCase() || "U"}
                     </span>
@@ -237,11 +243,11 @@ const Navbar: React.FC<NavbarProps> = ({
                       {user?.name || "User"}
                     </p>
                     <p
-                      className={`text-xs ${
-                        isScrolled ? "text-gray-500" : "text-white/70"
+                      className={`text-xs capitalize ${
+                        isScrolled ? "text-gray-600" : "text-white/90"
                       }`}
                     >
-                      {user?.role === "admin" ? "Admin" : "Member"}
+                      {user?.role || "Member"}
                     </p>
                   </div>
                 </div>

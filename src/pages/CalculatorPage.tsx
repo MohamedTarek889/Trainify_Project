@@ -1,17 +1,3 @@
-/**
- * Fitness Calculator Page for Trainify
- *
- * Comprehensive fitness calculators including:
- * - BMI Calculator
- * - BMR Calculator (Basal Metabolic Rate)
- * - TDEE Calculator (Total Daily Energy Expenditure)
- * - Macro Calculator (Protein, Carbs, Fats)
- * - Body Fat Percentage
- * - Ideal Weight Calculator
- * - Water Intake Calculator
- * - One Rep Max Calculator
- */
-
 import React, { useState } from "react";
 import {
   HiCalculator,

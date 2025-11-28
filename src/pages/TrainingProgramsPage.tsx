@@ -1,19 +1,10 @@
-/**
- * Training Programs Management Page for Trainify Admin Panel
- *
- * This page handles the management of training programs including:
- * - Viewing training programs list
- * - Adding new training programs
- * - Editing existing training programs
- * - Deleting training programs
- */
-
 import React, { useState } from "react";
 import Layout from "../components/dashboards/Layout";
 import Topbar from "../components/dashboards/Topbar";
 import DataTable from "../components/dashboards/DataTable";
 import AddEditModal from "../components/dashboards/AddEditModal";
 import ConfirmDialog from "../components/dashboards/ConfirmDialog";
+import TrainingPreviewModal from "../components/dashboards/TrainingPreviewModal";
 import {
   trainingPrograms,
   formatPrice,
@@ -32,6 +23,9 @@ const TrainingProgramsPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<TrainingProgram | null>(
     null
   );
+  const [previewModalOpen, setPreviewModalOpen] = useState(false);
+  const [previewingProgram, setPreviewingProgram] =
+    useState<TrainingProgram | null>(null);
 
   // Event handlers
   const handleSearch = (query: string) => {
@@ -55,8 +49,8 @@ const TrainingProgramsPage: React.FC = () => {
   };
 
   const handlePreview = (item: TrainingProgram) => {
-    console.log("Previewing training program:", item);
-    // Implement preview logic
+    setPreviewingProgram(item);
+    setPreviewModalOpen(true);
   };
 
   const handleSubmit = (values: Record<string, unknown>) => {
@@ -183,6 +177,16 @@ const TrainingProgramsPage: React.FC = () => {
           onCancel={() => setConfirmDialogOpen(false)}
           confirmText="Delete"
           variant="danger"
+        />
+
+        {/* Training Program Preview Modal */}
+        <TrainingPreviewModal
+          open={previewModalOpen}
+          program={previewingProgram}
+          onClose={() => {
+            setPreviewModalOpen(false);
+            setPreviewingProgram(null);
+          }}
         />
       </div>
     </Layout>

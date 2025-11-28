@@ -11,7 +11,6 @@ import {
 import type { SidebarItem } from "../components/dashboards/Sidebar/Sidebar";
 
 const DashboardLayout: React.FC = () => {
-  // إعداد عناصر السايدبار مع الروابط الصحيحة
   const sidebarItems: SidebarItem[] = [
     {
       id: "dashboard",
@@ -56,7 +55,6 @@ const DashboardLayout: React.FC = () => {
 
   return (
     <Layout sidebarConfig={{ menuItems: sidebarItems }}>
-      {/* هنا سيتم عرض المحتوى حسب الصفحة المختارة */}
       <Outlet />
     </Layout>
   );

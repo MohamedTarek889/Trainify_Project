@@ -3,9 +3,26 @@ import { useNavigate } from "react-router-dom";
 import { HiCalculator, HiArrowRight } from "react-icons/hi";
 import GradientText from "../../shared/GradientText";
 import Button from "../../shared/Button";
+import { useAuth } from "../../../context/useAuth";
 
 const HeroContent: React.FC = () => {
   const navigate = useNavigate();
+  const { isAuthenticated, user } = useAuth();
+
+  const handleJoinNowClick = () => {
+    if (isAuthenticated) {
+      // If user is authenticated, redirect to appropriate dashboard
+      if (user?.role === "admin") {
+        navigate("/dashboard");
+      } else {
+        navigate("/user-dashboard");
+      }
+    } else {
+      // If not authenticated, go to register page
+      navigate("/register");
+    }
+  };
+
   return (
     <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
       <div className="animate-fade-in-up">
@@ -41,13 +58,13 @@ const HeroContent: React.FC = () => {
           <Button
             variant="secondary"
             size="lg"
-            onClick={() => navigate("/register")}
+            onClick={handleJoinNowClick}
             icon={
               <HiArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             }
             iconPosition="right"
           >
-            Join Now
+            {isAuthenticated ? "Go to Dashboard" : "Join Now"}
           </Button>
         </div>
       </div>
